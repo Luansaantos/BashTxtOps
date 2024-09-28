@@ -14,5 +14,3 @@ delete(){
 
 }
 
-while
-done
