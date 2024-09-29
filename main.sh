@@ -22,8 +22,19 @@ fi
 
 #}
 
-#while
+while true; do
 
-#done
-create
-update
+    echo "Escolha uma das opções abaixo:"
+    echo "1) Criar arquivo"
+    echo "2) Atualizar o conteúdo do arquivo"
+    echo "3) Sair"
+    read -p "Opção: " option
+
+
+    case $option in
+        1) create ;;
+        2) update ;;
+        3) echo "Saindo..."; exit 0;;
+    esac
+
+done
