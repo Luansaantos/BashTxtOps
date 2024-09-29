@@ -1,19 +1,22 @@
 create(){
+read -p "Digite o nome do Arquivo()" file
+touch "${file}.txt"
 
 }
 
-read(){
+#read(){
 
-}
+#}
 
-update(){
+#update(){
 
-}
+#}
 
-delete(){
+#delete(){
 
-}
+#}
 
-while
+#while
 
-done
+#done
+create
