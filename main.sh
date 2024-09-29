@@ -4,9 +4,16 @@ touch "${file}.txt"
 
 }
 
-#read(){
+read(){ 
+read -p "Qual o Arquivo você Deseja ler (sem txt)" file
+if [[ -f "${file}.txt" ]]; then
+    echo "Conteudo do Arquivo ${file}.txt"
+    cat "${file}.txt"
+else
+	echo "O arquivo ${file}.txt não existe"
+fi
 
-#}
+}
 
 update(){
 read -p "Qual arquivo você deseja editar ?(sem txt)" file
@@ -27,14 +34,16 @@ while true; do
     echo "Escolha uma das opções abaixo:"
     echo "1) Criar arquivo"
     echo "2) Atualizar o conteúdo do arquivo"
-    echo "3) Sair"
+    echo "3) Ler Conteúdo do arquivo"
+    echo "4) Sair"
     read -p "Opção: " option
 
 
     case $option in
         1) create ;;
         2) update ;;
-        3) echo "Saindo..."; exit 0;;
+        3) read ;;
+        4) echo "Saindo..."; exit 0;;
     esac
 
 done
