@@ -4,7 +4,7 @@ touch "${file}.txt"
 
 }
 
-read(){ 
+Read(){ 
 read -p "Qual o Arquivo você Deseja ler (sem txt)" file
 if [[ -f "${file}.txt" ]]; then
     echo "Conteudo do Arquivo ${file}.txt"
@@ -42,7 +42,7 @@ while true; do
     case $option in
         1) create ;;
         2) update ;;
-        3) read ;;
+        3) Read ;;
         4) echo "Saindo..."; exit 0;;
     esac
 
