@@ -25,9 +25,15 @@ else
 fi
 }
 
-#delete(){
+delete(){
+    read -p "Qual o Arquivo você Deseja deletar (sem txt)" file
+    if [[ -f "${file}.txt" ]]; then
+        rm -rf "${file}.txt"
+    else
+        echo "O arquivo ${file}.txt não existe"
+    fi
 
-#}
+}
 
 while true; do
 
@@ -35,7 +41,8 @@ while true; do
     echo "1) Criar arquivo"
     echo "2) Atualizar o conteúdo do arquivo"
     echo "3) Ler Conteúdo do arquivo"
-    echo "4) Sair"
+    echo "4) Deletar arquivo"
+    echo "5) Sair"
     read -p "Opção: " option
 
 
@@ -43,7 +50,8 @@ while true; do
         1) create ;;
         2) update ;;
         3) Read ;;
-        4) echo "Saindo..."; exit 0;;
+        4) delete ;;
+        5) echo "Saindo..."; exit 0;;
     esac
 
 done
