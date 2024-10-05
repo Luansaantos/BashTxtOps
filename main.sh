@@ -35,6 +35,14 @@ delete(){
 
 }
 
+list_file(){
+     echo "Arquivos Disponiveis"
+     ls *.txt 2> /dev/null
+     if [[ $? -ne 0 ]]; then
+    echo "Nenhum Arquivo encontrado"
+    fi
+}
+
 while true; do
 
     echo "Escolha uma das opções abaixo:"
@@ -42,7 +50,8 @@ while true; do
     echo "2) Atualizar o conteúdo do arquivo"
     echo "3) Ler Conteúdo do arquivo"
     echo "4) Deletar arquivo"
-    echo "5) Sair"
+    echo "5) listar arquivos"
+    echo "6) Sair"
     read -p "Opção: " option
 
 
@@ -51,7 +60,8 @@ while true; do
         2) update ;;
         3) Read ;;
         4) delete ;;
-        5) echo "Saindo..."; exit 0;;
+        5) list_file ;;
+        6) echo "Saindo..."; exit 0;;
         *) echo "Opção invalida tente novamente" ;;
     esac
 
