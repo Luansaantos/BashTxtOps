@@ -52,6 +52,7 @@ while true; do
         3) Read ;;
         4) delete ;;
         5) echo "Saindo..."; exit 0;;
+        *) echo "Opção invalida tente novamente" ;;
     esac
 
 done
