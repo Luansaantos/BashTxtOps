@@ -1,5 +1,5 @@
 create(){
-read -p "Digite o nome do Arquivo()" file
+read -p "Digite o nome do Arquivo(sem txt)" file
 touch "${file}.txt"
 
 }
